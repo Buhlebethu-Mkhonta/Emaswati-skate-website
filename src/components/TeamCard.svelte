@@ -6,6 +6,8 @@
 	export let facebook = "";
 	export let youtube = "";
 	export let twitter = "";
+	
+	import { Image } from 'astro:assets';
 </script>
 
 <div class="card bg-base-100  shadow-sm border border-base-300">

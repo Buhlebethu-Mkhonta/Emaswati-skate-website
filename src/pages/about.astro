@@ -3,10 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import ValueCard from "../components/ValueCard.svelte";
 import ProgramCard from "../components/ProgramCard.svelte";
 import TeamCard from "../components/TeamCard.svelte";
+
+import { Image } from 'astro:assets';
+import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 ---
 
 <Layout title="About Us - Emaswati Skate">
 	<!-- Hero -->
+	 
 	<section class="about-hero relative min-h-[45vh] flex items-center justify-center text-center">
 		<div class="absolute inset-0 bg-black/60"></div>
 		<div class="relative z-[1] max-w-4xl px-6">
@@ -74,19 +78,19 @@ import TeamCard from "../components/TeamCard.svelte";
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 				<TeamCard name="Sphiwe" 
                           role="Program Lead" 
-                          image="/images/swazi-park-6-a4d0dc84.jpg"
+                          image='/images/swazi-park-6-a4d0dc84.jpg'
                           facebook="https://www.facebook.com/" 
                           instagram="https://www.instagram.com/"/>
                           
 				<TeamCard name="Thando" 
                           role="Community Coordinator" 
-                          image="/images/swazi-park-6-a4d0dc84.jpg" 
+                          image='/images/swazi-park-6-a4d0dc84.jpg' 
                           facebook="https://www.facebook.com/"
                           instagram="https://www.instagram.com/"/>
                 
                 <TeamCard name="Thando" 
                           role="Community Coordinator" 
-                          image="/images/swazi-park-6-a4d0dc84.jpg" 
+                          image='/images/swazi-park-6-a4d0dc84.jpg'
                           facebook="https://www.facebook.com/"
                           instagram="https://www.instagram.com/"/>
 
@@ -99,7 +103,7 @@ import TeamCard from "../components/TeamCard.svelte";
 	<section class="py-16 bg-base-200">
 		<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 			<div>
-				<img src="/images/swazi-park-6-a4d0dc84.jpg" alt="Skaters in Eswatini" class="rounded-xl shadow-xl" />
+				<Image src= {SkatePark} alt="Skaters in Eswatini" class="rounded-xl shadow-xl" />
 			</div>
 			<div>
 				<h2 class="text-3xl font-bold mb-4">Our Roots</h2>

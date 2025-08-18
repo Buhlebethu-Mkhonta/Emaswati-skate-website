@@ -4,6 +4,9 @@ import ProgramCard from "../components/ProgramCard.svelte"
 import InvolveCard from "../components/InvolveCard.svelte"
 import Layout from '../layouts/Layout.astro'
 
+import { Image } from 'astro:assets';
+import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -84,7 +87,7 @@ import Layout from '../layouts/Layout.astro'
 
 <style>
 	.hero {
-		background-image: url('/images/swazi-park-6-a4d0dc84.jpg');
+		background-image: url('src/assets/swazi-park-6-a4d0dc84.jpg');
 		background-size: cover;
 		background-position: center;
 		position: relative;
