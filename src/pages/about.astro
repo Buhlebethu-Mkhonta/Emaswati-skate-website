@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ValueCard from "../components/ValueCard.svelte";
+import ProgramCard from "../components/ProgramCard.svelte";
+import TeamCard from "../components/TeamCard.svelte";
+---
+
+<Layout title="About Us - Emaswati Skate">
+	<!-- Hero -->
+	<section class="about-hero relative min-h-[45vh] flex items-center justify-center text-center">
+		<div class="absolute inset-0 bg-black/60"></div>
+		<div class="relative z-[1] max-w-4xl px-6">
+			<h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">About Emaswati Skate</h1>
+			<p class="mt-4 text-white/90 md:text-lg">We are a community-led movement empowering Eswatini youth through skateboarding, mentorship, and safe spaces to grow.</p>
+		</div>
+	</section>
+
+	<!-- Mission + Pillars -->
+	<section class="py-16 bg-base-100">
+		<div class="container mx-auto px-4">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+				<div class="lg:col-span-2">
+					<h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+					<p class="text-base/7 text-base-content/80">
+						We empower Eswatini youth through skateboarding—creating safe, inclusive spaces to learn,
+						grow, and lead. With boards, mentorship, and community events, we help young people build
+						confidence and positive life skills.
+					</p>
+				</div>
+				<div class="grid grid-cols-3 gap-3">
+					<div class="card bg-base-100 border border-base-300">
+						<div class="card-body items-center text-center p-4">
+							<i class="bx bx-package text-2xl text-primary"></i>
+							<p class="font-semibold">Access</p>
+							<p class="text-xs opacity-70">Boards and safety gear for kids who need them.</p>
+						</div>
+					</div>
+					<div class="card bg-base-100 border border-base-300">
+						<div class="card-body items-center text-center p-4">
+							<i class="bx bx-planet text-2xl text-primary"></i>
+							<p class="font-semibold">Community</p>
+							<p class="text-xs opacity-70">Inclusive sessions and welcoming skate spaces.</p>
+						</div>
+					</div>
+					<div class="card bg-base-100 border border-base-300">
+						<div class="card-body items-center text-center p-4">
+							<i class="bx bx-compass text-2xl text-primary"></i>
+							<p class="font-semibold">Mentorship</p>
+							<p class="text-xs opacity-70">Guidance, life skills, and youth leadership.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Our Values -->
+	<section class="py-16 bg-base-200">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-10">Our Values</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<ValueCard icon="bx bx-bullseye" title="Courage" description="We celebrate progress and encourage youth to try, fall, learn, and try again." />
+				<ValueCard icon="bx bx-heart-circle" title="Inclusivity" description="Everyone is welcome—girls, boys, beginners, differently-abled youth, and all identities." />
+				<ValueCard icon="bx bx-run" title="Perseverance" description="Skating teaches patience, problem solving, and the confidence to keep going." />
+				<ValueCard icon="bx bx-world" title="Community" description="We build safe, supportive spaces and connect youth to a positive network." />
+			</div>
+		</div>
+	</section>
+
+	<!--Meet the team -->
+	<section id="team" class="py-16 bg-base-100">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-10">Meet the Team</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+				<TeamCard name="Sphiwe" 
+                          role="Program Lead" 
+                          image="/images/swazi-park-6-a4d0dc84.jpg"
+                          facebook="https://www.facebook.com/" 
+                          instagram="https://www.instagram.com/"/>
+                          
+				<TeamCard name="Thando" 
+                          role="Community Coordinator" 
+                          image="/images/swazi-park-6-a4d0dc84.jpg" 
+                          facebook="https://www.facebook.com/"
+                          instagram="https://www.instagram.com/"/>
+                
+                <TeamCard name="Thando" 
+                          role="Community Coordinator" 
+                          image="/images/swazi-park-6-a4d0dc84.jpg" 
+                          facebook="https://www.facebook.com/"
+                          instagram="https://www.instagram.com/"/>
+
+				
+			</div>
+		</div>
+	</section>
+
+	<!-- Story -->
+	<section class="py-16 bg-base-200">
+		<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+			<div>
+				<img src="/images/swazi-park-6-a4d0dc84.jpg" alt="Skaters in Eswatini" class="rounded-xl shadow-xl" />
+			</div>
+			<div>
+				<h2 class="text-3xl font-bold mb-4">Our Roots</h2>
+				<p>
+					Emaswati Skate began as a small crew sharing boards and teaching friends to ride. With help
+					from local partners, we turned sessions into programs and built a growing network of youth
+					leaders.
+				</p>
+				<p class="mt-3">
+					Today, we focus on weekly lessons, access to gear, and events that strengthen community and
+					create leadership opportunities for Eswatini youth.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-16 bg-primary text-white">
+		<div class="container mx-auto px-4 text-center">
+			<h2 class="text-3xl font-bold mb-4">Join Emaswati Skate</h2>
+			<p class="mb-6">Support local youth with lessons, safe spaces, and mentorship through skateboarding.</p>
+			<div class="flex justify-center gap-3 flex-wrap">
+				<a href="/support" class="btn btn-white">Donate</a>
+				<a href="/connect" class="btn btn-outline btn-white">Volunteer</a>
+				<a href="/connect" class="btn btn-white">Partner with Us</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.about-hero {
+		background-image: url('/images/swazi-park-6-a4d0dc84.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+</style>
+
+

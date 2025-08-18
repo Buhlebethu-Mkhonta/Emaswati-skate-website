@@ -1,4 +1,83 @@
-# Astro Starter Kit: Basics
+# Emaswati Skateboarding NGO Website
+
+This is the official website for the Emaswati Skateboarding NGO, built with Astro and TailwindCSS.
+
+## Required Images
+
+The following images need to be added to the `/public` directory:
+
+### Home Page
+- `hero-bg.jpg` - Hero background image (1920x1080px)
+- `event-1.jpg` - Summer Skate Competition image (800x600px)
+- `event-2.jpg` - Beginner's Workshop image (800x600px)
+- `event-3.jpg` - Community Skate Day image (800x600px)
+
+### About Page
+- `about-story.jpg` - Our Story section image (800x600px)
+- `team-member-1.jpg` - Team member photo (400x400px)
+- `team-member-2.jpg` - Team member photo (400x400px)
+- `team-member-3.jpg` - Team member photo (400x400px)
+
+### Events Page
+- `past-event-1.jpg` through `past-event-8.jpg` - Past events gallery images (800x600px)
+
+### Gallery Page
+- `gallery-1.jpg` through `gallery-4.jpg` - Gallery images (800x600px)
+- `video-thumbnail-1.jpg` - Video thumbnail (800x600px)
+- `video-thumbnail-2.jpg` - Video thumbnail (800x600px)
+
+### Blog Page
+- `featured-post.jpg` - Featured blog post image (800x600px)
+- `blog-1.jpg` through `blog-3.jpg` - Blog post images (800x600px)
+- `author-avatar.jpg` - Featured post author avatar (200x200px)
+- `author-avatar-1.jpg` through `author-avatar-3.jpg` - Blog post author avatars (200x200px)
+
+## Image Specifications
+- All images should be optimized for web use
+- Recommended formats: JPG for photos, PNG for graphics
+- Maximum file size: 500KB per image
+- Resolution: 72 DPI
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Project Structure
+
+```
+.
+├── public/          # Static assets
+├── src/
+│   ├── components/  # Reusable components
+│   ├── layouts/     # Page layouts
+│   ├── pages/       # Page components
+│   └── styles/      # Global styles
+└── package.json
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ```sh
 npm create astro@latest -- --template basics

@@ -1,11 +1,111 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css"
+import ValueCard from "../components/ValueCard.svelte"
+import ProgramCard from "../components/ProgramCard.svelte"
+import InvolveCard from "../components/InvolveCard.svelte"
+import Layout from '../layouts/Layout.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Hero Section -->
+	<section class="hero min-h-[80vh]">
+		<div class="hero-content text-center">
+			<div class="max-w-4xl mx-auto">
+				<div class="px-4 py-3 md:px-8 md:py-6 shadow-2xl">
+					<h1 class="hero-title text-4xl md:text-7xl font-black tracking-tight leading-[0.95] uppercase">
+						Empowering Eswatini Youth Through
+						<span class="block italic text-primary">Skateboarding</span>
+					</h1>
+				</div>
+				<div class="mt-6">
+					<a href="/about/" class="btn btn-primary btn-lg rounded-full shadow-lg">
+						<i class="bx bx-skateboard text-2xl"></i>
+						<span class="ml-2">Join Our Mission</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- What We Do -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-12">What We Do</h2>
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+				<ProgramCard icon="bx bx-skateboard" title="Skate Lessons" description="Regular classes on safety, technique, and respect—free for youth." />
+				<ProgramCard icon="bx bx-group" title="Community Events" description="Skate jams, park cleanups, and pop-up sessions that bring people together." />
+				<ProgramCard icon="bx bx-donate-heart" title="Gear Access" description="We collect and distribute boards and safety gear to kids who need them." />
+				<ProgramCard icon="bx bx-heart" title="Mentorship" description="Positive role models and life-skills workshops for youth development." />
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Impact Section -->
+	<section class="py-20 bg-base-200">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-12">Our Impact</h2>
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+				<div>
+					<h3 class="text-4xl font-bold text-primary">500+</h3>
+					<p>Youth Reached</p>
+				</div>
+				<div>
+					<h3 class="text-4xl font-bold text-primary">20</h3>
+					<p>Communities Served</p>
+				</div>
+				<div>
+					<h3 class="text-4xl font-bold text-primary">100+</h3>
+					<p>Skateboards Donated</p>
+				</div>
+				<div>
+					<h3 class="text-4xl font-bold text-primary">50+</h3>
+					<p>Events Hosted</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Get Involved -->
+	<section class="py-20 bg-base-20">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-12">Get Involved</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<InvolveCard icon="bx bx-heart" title="Make a Donation" description="Your contribution funds lessons, safety gear, and safe spaces to skate." href="/support" cta="Donate" />
+				<InvolveCard icon="bx bx-handshake" title="Volunteer" description="Help at sessions, or support events and outreach." href="/connect" cta="Lend a Hand" />
+				<InvolveCard icon="bx bx-link-external" title="Partner With Us" description="Brands, schools, and community groups—let’s build together." href="/connect" cta="Become a Partner" />
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.hero {
+		background-image: url('/images/swazi-park-6-a4d0dc84.jpg');
+		background-size: cover;
+		background-position: center;
+		position: relative;
+	}
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58));
+	}
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		color: white;
+	}
+	.hero-title {
+		text-shadow: 0 3px 8px rgba(0,0,0,0.35);
+		letter-spacing: -0.02em;
+	}
+</style>
