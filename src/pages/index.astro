@@ -11,21 +11,25 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+
 <Layout>
 	<!-- Hero Section -->
-	<section class="hero min-h-[80vh]">
-		<div class="hero-content text-center">
+	<section class="hero min-h-[80vh] flex items-center justify-center text-center">
+		<div class="hero-content w-full">
 			<div class="max-w-4xl mx-auto">
-				<div class="px-4 py-3 md:px-8 md:py-6 shadow-2xl">
-					<h1 class="hero-title text-4xl md:text-7xl font-black tracking-tight leading-[0.95] uppercase">
-						Empowering Eswatini Youth Through
-						<span class="block italic text-primary">Skateboarding</span>
+				<div class="px-4 py-3 md:px-8 md:py-6 shadow-2xl bg-black/60 rounded-xl">
+					<h1 class="hero-title text-4xl md:text-7xl font-black tracking-tight leading-[0.95] uppercase text-white">
+						Empowering Eswatini Youth
+						<span class="block italic text-primary">Through Skateboarding</span>
 					</h1>
+					<p class="mt-4 text-lg md:text-2xl text-white/90 font-medium">
+						A registered non-profit dedicated to breaking barriers, building confidence, and creating opportunities for youth in Eswatini through skateboarding, leadership, and community.
+					</p>
 				</div>
 				<div class="mt-6">
 					<a href="/about/" class="btn btn-primary btn-lg rounded-full shadow-lg">
 						<i class="bx bx-skateboard text-2xl"></i>
-						<span class="ml-2">Join Our Mission</span>
+						<span class="ml-2">Learn More About Us</span>
 					</a>
 				</div>
 			</div>
@@ -38,10 +42,16 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 		<div class="container mx-auto px-4">
 			<h2 class="text-3xl font-bold text-center mb-12">What We Do</h2>
 			<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-				<ProgramCard icon="bx bx-skateboard" title="Skate Lessons" description="Regular classes on safety, technique, and respect—free for youth." />
-				<ProgramCard icon="bx bx-group" title="Community Events" description="Skate jams, park cleanups, and pop-up sessions that bring people together." />
-				<ProgramCard icon="bx bx-donate-heart" title="Gear Access" description="We collect and distribute boards and safety gear to kids who need them." />
-				<ProgramCard icon="bx bx-heart" title="Mentorship" description="Positive role models and life-skills workshops for youth development." />
+				<ProgramCard icon="bx bx-skateboard" title="Skate Lessons" description="Free lessons for all ages at Lafezeka Skate Park and in communities." />
+				<ProgramCard icon="bx bx-female-sign" title="Girls Skate & Empowerment" description="Girls-only sessions, lessons, and empowerment circles." />
+				<ProgramCard icon="bx bx-health" title="Skate & Heal" description="Women's skateboarding blended with therapeutic support and healing." />
+				<ProgramCard icon="bx bx-group" title="Community Outreach" description="Mobile skatepark, workshops, and events in underserved communities." />
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+				<ProgramCard icon="bx bx-donate-heart" title="Gear Access" description="Free-to-use skateboards and safety gear for all participants." />
+				<ProgramCard icon="bx bx-world" title="Leadership & Mentorship" description="Youth leadership, life skills, and positive role models." />
+				<ProgramCard icon="bx bx-plus-medical" title="Health & Diabetes" description="Workshops and partnerships for healthy living and diabetes awareness." />
+				<ProgramCard icon="bx bx-universal-access" title="Inclusive Skating" description="Programs for girls, boys, and differently-abled youth." />
 			</div>
 		</div>
 	</section>
@@ -57,7 +67,7 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 					<p>Youth Reached</p>
 				</div>
 				<div>
-					<h3 class="text-4xl font-bold text-primary">20</h3>
+					<h3 class="text-4xl font-bold text-primary">20+</h3>
 					<p>Communities Served</p>
 				</div>
 				<div>
@@ -66,8 +76,13 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 				</div>
 				<div>
 					<h3 class="text-4xl font-bold text-primary">50+</h3>
-					<p>Events Hosted</p>
+					<p>Events & Workshops</p>
 				</div>
+			</div>
+			<div class="mt-8 text-center text-lg text-base-content/70">
+				<p>
+					We are building a movement—one board, one lesson, and one community at a time. Join us in rolling forward for Eswatini youth!
+				</p>
 			</div>
 		</div>
 	</section>
@@ -78,8 +93,11 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 			<h2 class="text-3xl font-bold text-center mb-12">Get Involved</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 				<InvolveCard icon="bx bx-heart" title="Make a Donation" description="Your contribution funds lessons, safety gear, and safe spaces to skate." href="/support" cta="Donate" />
-				<InvolveCard icon="bx bx-handshake" title="Volunteer" description="Help at sessions, or support events and outreach." href="/connect" cta="Lend a Hand" />
-				<InvolveCard icon="bx bx-link-external" title="Partner With Us" description="Brands, schools, and community groups—let’s build together." href="/connect" cta="Become a Partner" />
+				<InvolveCard icon="bx bx-handshake" title="Volunteer" description="Help at sessions, support events, or join our outreach team." href="/connect" cta="Lend a Hand" />
+				<InvolveCard icon="bx bx-link-external" title="Partner With Us" description="Brands, schools, and organizations—let’s build a brighter future together." href="/connect" cta="Become a Partner" />
+			</div>
+			<div class="mt-8 text-center text-base-content/70">
+				<p>Contact: <a href="mailto:emaswatiskate@gmail.com" class="underline">emaswatiskate@gmail.com</a> | Instagram: <a href="https://instagram.com/Eswatini_Skateboarding" class="underline">@Eswatini_Skateboarding</a></p>
 			</div>
 		</div>
 	</section>

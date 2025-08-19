@@ -1,127 +1,71 @@
-# Emaswati Skateboarding NGO Website
 
-This is the official website for the Emaswati Skateboarding NGO, built with Astro and TailwindCSS.
 
-## Required Images
+# EMASWATI SKATE
 
-The following images need to be added to the `/public` directory:
+A REGISTERED NON PROFIT ORGANIZATION (NGO)
+FOCUSED ON YOUTH DEVELOPMENT IN ESWATINI
 
-### Home Page
-- `hero-bg.jpg` - Hero background image (1920x1080px)
-- `event-1.jpg` - Summer Skate Competition image (800x600px)
-- `event-2.jpg` - Beginner's Workshop image (800x600px)
-- `event-3.jpg` - Community Skate Day image (800x600px)
+## OUR MISSION
+Emaswati Skate is dedicated to empowering youth in Eswatini through skateboarding. Our mission is to break down barriers, build confidence, and cultivate a vibrant, inclusive skate culture that fosters creativity, leadership, and healthy living. We strive to provide opportunities for every young person to learn, grow, and roll forward with confidence and purpose.
 
-### About Page
-- `about-story.jpg` - Our Story section image (800x600px)
-- `team-member-1.jpg` - Team member photo (400x400px)
-- `team-member-2.jpg` - Team member photo (400x400px)
-- `team-member-3.jpg` - Team member photo (400x400px)
+## WHAT IS EMASWATI SKATE?
+- Emaswati Skate is a youth NGO focused on developing youth through skateboarding.
+- Skateboarding offers a unique perspective and creative outlook on life.
+- Our goal is to give the Swazi nation the opportunity to learn something new, open more doors, and help youth become more creative.
+- We introduce skateboarding to Eswatini and give as many young people as possible a chance to try it out, promoting both mental and physical well-being.
 
-### Events Page
-- `past-event-1.jpg` through `past-event-8.jpg` - Past events gallery images (800x600px)
+## PROJECTS & PROGRAMS
+- **Lafezeka Skate Park:** Eswatini’s first public skate park, completed June 2023, providing a safe and welcoming space for youth.
+- **Youth Leadership & Outreach:** Programs focused on positive activities, skill development, and self-efficacy.
+- **Girls Skate & Empowerment:** Girls-only skate sessions with lessons, free skate time, and empowerment discussions.
+- **Community Outreach:** Bringing skateboarding and fun activities to three main communities with mini quarter pipes.
+- **Workshops at Events:** Mobile skate park and lessons at events around the country.
+- **Skate Lessons:** Open to all ages at the main skate park.
+- **Skate & Heal (Women’s Program):** Blending skateboarding with therapeutic support and healing circles.
+- **Skateboarding with Disabilities:** Promoting inclusivity and accessibility.
+- **Diabetes & Health Initiatives:** Partnering with the Diabetes Association for workshops and health education.
 
-### Gallery Page
-- `gallery-1.jpg` through `gallery-4.jpg` - Gallery images (800x600px)
-- `video-thumbnail-1.jpg` - Video thumbnail (800x600px)
-- `video-thumbnail-2.jpg` - Video thumbnail (800x600px)
+## FUTURE PLANS
+- Teach as many people as possible how to skate in Eswatini.
+- Hold life skills and health programs at the skatepark/youth center.
+- Build multiple public skate parks over a 5-year plan.
+- Educate about diabetes, hypertension, and healthy living.
+- Teach construction/craft skills related to skateboarding infrastructure.
+- Create job training programs in the skateboarding industry.
+- Inspire passion for education and self-development through skateboarding.
 
-### Blog Page
-- `featured-post.jpg` - Featured blog post image (800x600px)
-- `blog-1.jpg` through `blog-3.jpg` - Blog post images (800x600px)
-- `author-avatar.jpg` - Featured post author avatar (200x200px)
-- `author-avatar-1.jpg` through `author-avatar-3.jpg` - Blog post author avatars (200x200px)
+## TECH STACK
+- [Astro](https://astro.build/)
+- [Svelte](https://svelte.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-## Image Specifications
-- All images should be optimized for web use
-- Recommended formats: JPG for photos, PNG for graphics
-- Maximum file size: 500KB per image
-- Resolution: 72 DPI
+## SETUP & USAGE
+1. **Install dependencies:**
+	```bash
+	npm install
+	```
+2. **Start development server:**
+	```bash
+	npm run dev
+	```
+3. **Build for production:**
+	```bash
+	npm run build
+	```
+4. **Preview production build:**
+	```bash
+	npm run preview
+	```
 
-## Development
+## CONTRIBUTING
+We welcome contributions! Please open an issue or submit a pull request to get involved.
 
-```bash
-# Install dependencies
-npm install
+## CONTACT
+- **Director:** Jason Martin
+- **Phone:** +268 761 787 55
+- **Email:** emaswatiskate@gmail.com | Jasontkmartin@gmail.com
+- **Instagram:** [Eswatini_Skateboarding](https://instagram.com/Eswatini_Skateboarding)
+- **Facebook:** [Swazi skateboarding](https://facebook.com/SwaziSkateboarding)
 
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## Project Structure
-
-```
-.
-├── public/          # Static assets
-├── src/
-│   ├── components/  # Reusable components
-│   ├── layouts/     # Page layouts
-│   ├── pages/       # Page components
-│   └── styles/      # Global styles
-└── package.json
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Emaswati Skate – Empowering youth, building community, and rolling forward together.

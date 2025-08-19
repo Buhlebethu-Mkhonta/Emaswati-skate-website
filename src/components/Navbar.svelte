@@ -11,10 +11,10 @@
             <ul class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-4 w-52 shadow">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about/">About Us</a></li>
-                <li><a href="/about/">Programmes</a></li>
-                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/gallary/">Gallery</a></li>
                 <li><a href="/updates/">Updates</a></li>
                 <li><a href="/events/">Events</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
         </div>
         <a class="btn btn-ghost text-xl" href="/">Emaswati Skateboarding</a>
@@ -23,10 +23,10 @@
         <ul class="menu menu-horizontal px-1">
             <li><a href="/" class="hover:text-primary">Home</a></li>
             <li><a href="/about/" class="hover:text-primary hover:bg-base">About Us</a></li>
-            <li><a href="/about/" class="hover:text-primary hover:bg-base">Programmes</a></li>
-            <li><a href="/gallery/" class="hover:text-primary hover:bg-base">Gallery</a></li>
+            <li><a href="/gallary/" class="hover:text-primary hover:bg-base">Gallery</a></li>
             <li><a href="/updates/" class="hover:text-primary hover:bg-base">Updates</a></li>
             <li><a href="/events/" class="hover:text-primary hover:bg-base">Events</a></li>
+            <li><a href="/contact/" class="hover:text-primary hover:bg-base">Contact</a></li>
         </ul>
     </div>
     <div class="navbar-end">

@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogPostCard from "../components/BlogPostCard.svelte";
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+
+<Layout title="Updates - Emaswati Skate">
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl md:text-4xl font-bold mb-2 text-primary">Updates & Stories</h1>
+    <p class="mb-8 text-base-content/80">Catch up on the latest news, stories, and articles from Emaswati Skate.</p>
+
+    <!-- Featured Story -->
+    {allPosts.length > 0 && (
+      <div class="mb-12">
+        <h2 class="text-xl font-semibold mb-4">Featured Story</h2>
+        <BlogPostCard
+          title={(allPosts[0] as any).frontmatter.title}
+          description={(allPosts[0] as any).frontmatter.description}
+          image={(allPosts[0] as any).frontmatter.image?.url || '/images/swazi-park-6-a4d0dc84.jpg'}
+          alt={(allPosts[0] as any).frontmatter.image?.alt || (allPosts[0] as any).frontmatter.title}
+          url={(allPosts[0] as any).url}
+          pubDate={(allPosts[0] as any).frontmatter.pubDate}
+          tags={(allPosts[0] as any).frontmatter.tags}
+          featured={true}
+        />
+      </div>
+    )}
+
+    <!-- Recent Articles -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Recent Articles</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {allPosts.slice(1).length === 0 && (
+          <div class="col-span-3 text-center text-base-content/60">No more articles yet. Check back soon!</div>
+        )}
+        {allPosts.slice(1).map((post: any) => (
+          <BlogPostCard
+            title={(post as any).frontmatter.title}
+            description={(post as any).frontmatter.description}
+            image={(post as any).frontmatter.image?.url || '/images/swazi-park-6-a4d0dc84.jpg'}
+            alt={(post as any).frontmatter.image?.alt || (post as any).frontmatter.title}
+            url={(post as any).url}
+            pubDate={(post as any).frontmatter.pubDate}
+            tags={(post as any).frontmatter.tags}
+            featured={false}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
