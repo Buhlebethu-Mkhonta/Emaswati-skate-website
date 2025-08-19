@@ -2,15 +2,56 @@
 const { frontmatter } = Astro.props;
 import Layout from "./Layout.astro";
 
+// Import all posts from updates/posts
+const posts = await Astro.glob('../pages/posts/*.md');
 ---
-<Layout title={frontmatter.title}>
-    <section class="container mx-auto px-4 py-12">
-        <article class="max-w-3xl mx-auto bg-base-100 rounded-lg shadow p-6">
-            <h1 class="text-3xl font-bold mb-4">{frontmatter.title}</h1>
-            <p class="text-sm text-base-content/70 mb-2">Written by {frontmatter.author}</p>
-            <div class="prose prose-neutral" set:html={frontmatter.content} />
-        </article>
-        <slot />
-    </section>
 
+<Layout title={frontmatter.title}>
+  <section class="container mx-auto px-4 py-12">
+    <article class="max-w-3xl mx-auto bg-white dark:bg-base-100 rounded-2xl shadow-lg p-8 leading-relaxed">
+      
+      <!-- Blog header -->
+      <header class="mb-8 text-center">
+        <h1 class="text-4xl font-extrabold tracking-tight mb-3 text-base-content">
+          {frontmatter.title}
+        </h1>
+        <p class="text-sm text-base-content/70">
+          ✍️ Written by <span class="font-medium">{frontmatter.author}</span> 
+          {frontmatter.pubDate ? ` • ${new Date(frontmatter.pubDate).toLocaleDateString()}` : ""}
+        </p>
+      </header>
+
+      <!-- Blog content -->
+      <div class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+        <slot />
+      </div>
+      
+      <!-- Back button -->
+      <div class="mt-12 text-center">
+        <a href="/updates" class="inline-block px-6 py-3 rounded-xl bg-primary/40 hover:bg-primary hover:text-white transition font-medium"
+        >
+          ⬅ Back to Updates
+        </a>
+      </div>
+    </article>
+    <!-- Other blogs -->
+      <section class="mt-16 border-t border-base-300 pt-8">
+        <h2 class="text-xl font-semibold mb-4 text-base-content">Read more stories</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {
+            posts
+              .filter(p => p.frontmatter.title !== frontmatter.title) // exclude current post
+              .slice(0, 2) // show only 2 other posts
+              .map(post => (
+                <a href={post.url} class="block p-4 rounded-lg border border-base-300 hover:bg-base-200 transition">
+                  <h3 class="text-lg font-semibold mb-1">{post.frontmatter.title}</h3>
+                  <p class="text-sm text-base-content/70">
+                    {post.frontmatter.description || "Read more →"}
+                  </p>
+                </a>
+              ))
+          }
+        </div>
+      </section>
+  </section>
 </Layout>

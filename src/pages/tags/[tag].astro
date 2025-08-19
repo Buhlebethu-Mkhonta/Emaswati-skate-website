@@ -5,12 +5,11 @@ export async function getStaticPaths() {
   const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
 
   return [
-    {params: {tag: "astro"}, props: {posts: allPosts}},
-    {params: {tag: "successes"}, props: {posts: allPosts}},
-    {params: {tag: "community"}, props: {posts: allPosts}},
-    {params: {tag: "blogging"}, props: {posts: allPosts}},
-    {params: {tag: "setbacks"}, props: {posts: allPosts}},
-    {params: {tag: "learning in public"}, props: {posts: allPosts}}
+    {params: {tag: "Outreach"}, props: {posts: allPosts}},
+    {params: {tag: "Skate Lesson"}, props: {posts: allPosts}},
+    {params: {tag: "Community"}, props: {posts: allPosts}},
+    {params: {tag: "Mental Health"}, props: {posts: allPosts}},
+    {params: {tag: "Female Empowerment"}, props: {posts: allPosts}}
   ];
 }
 

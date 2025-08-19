@@ -21,13 +21,17 @@
       <span class="inline-block bg-warning text-warning-content text-xs font-bold px-2 py-1 rounded mb-2">Featured</span>
     {/if}
     <h3 class={featured ? 'text-2xl font-bold mb-2' : 'text-lg font-bold mb-1'}>
-      <a href={url} class="hover:underline">{title}</a>
+      {title}
     </h3>
     <p class="mb-2 text-base-content/80">{description}</p>
     <div class="flex flex-wrap gap-2 mb-2">
       {#each tags as tag}
         <span class="bg-base-200 text-xs px-2 py-1 rounded">{tag}</span>
       {/each}
+    </div>
+    <div class="flex items-end">
+      <div class="flex-1"></div>
+      <a href={url} class="ml-auto mt-2 hover:underline ">Read Now</a>
     </div>
     <span class="text-xs text-base-content/60">{pubDate}</span>
   </div>

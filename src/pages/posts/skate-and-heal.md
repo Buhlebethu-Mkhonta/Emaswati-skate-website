@@ -3,8 +3,12 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: "Skate and Heal: Women's Skateboarding Program"
 date: 2025-08-19
 description: "A unique program blending skateboarding empowerment with therapeutic support for women."
-image: "../assets/Women-program.png"
-tags: ["astro", "blogging", "learning in public"]
+author: 'Astro Learner'
+image: 
+    url: "../../images/Women-program.png"
+    alt: "Ladies doing skateboard lessons"
+tags: ["Skate Lesson", "Community", "Female Empowerment"]
+
 ---
 
 

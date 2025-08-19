@@ -1,11 +1,10 @@
 ---
 import ValueCard from "../components/ValueCard.svelte"
+import TestimonialCard from "../components/TestimonialCard.svelte"
 import ProgramCard from "../components/ProgramCard.svelte"
 import InvolveCard from "../components/InvolveCard.svelte"
 import Layout from '../layouts/Layout.astro'
 
-import { Image } from 'astro:assets';
-import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -17,8 +16,8 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 	<section class="hero min-h-[80vh] flex items-center justify-center text-center">
 		<div class="hero-content w-full">
 			<div class="max-w-4xl mx-auto">
-				<div class="px-4 py-3 md:px-8 md:py-6 shadow-2xl bg-black/60 rounded-xl">
-					<h1 class="hero-title text-4xl md:text-7xl font-black tracking-tight leading-[0.95] uppercase text-white">
+				<div class="px-4 py-3">
+					<h1 class="hero-title text-4xl md:text-6xl font-black tracking-tight leading-[0.95] uppercase text-white">
 						Empowering Eswatini Youth
 						<span class="block italic text-primary">Through Skateboarding</span>
 					</h1>
@@ -41,16 +40,14 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 	<section class="py-20 bg-white">
 		<div class="container mx-auto px-4">
 			<h2 class="text-3xl font-bold text-center mb-12">What We Do</h2>
-			<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-				<ProgramCard icon="bx bx-skateboard" title="Skate Lessons" description="Free lessons for all ages at Lafezeka Skate Park and in communities." />
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<ProgramCard icon="fa-solid fa-person-skating" title="Skate Lessons" description="Free lessons for all ages at Lafezeka Skate Park and in communities." />
 				<ProgramCard icon="bx bx-female-sign" title="Girls Skate & Empowerment" description="Girls-only sessions, lessons, and empowerment circles." />
-				<ProgramCard icon="bx bx-health" title="Skate & Heal" description="Women's skateboarding blended with therapeutic support and healing." />
 				<ProgramCard icon="bx bx-group" title="Community Outreach" description="Mobile skatepark, workshops, and events in underserved communities." />
 			</div>
-			<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
 				<ProgramCard icon="bx bx-donate-heart" title="Gear Access" description="Free-to-use skateboards and safety gear for all participants." />
 				<ProgramCard icon="bx bx-world" title="Leadership & Mentorship" description="Youth leadership, life skills, and positive role models." />
-				<ProgramCard icon="bx bx-plus-medical" title="Health & Diabetes" description="Workshops and partnerships for healthy living and diabetes awareness." />
 				<ProgramCard icon="bx bx-universal-access" title="Inclusive Skating" description="Programs for girls, boys, and differently-abled youth." />
 			</div>
 		</div>
@@ -96,11 +93,36 @@ import SkatePark from '../assets/swazi-park-6-a4d0dc84.jpg';
 				<InvolveCard icon="bx bx-handshake" title="Volunteer" description="Help at sessions, support events, or join our outreach team." href="/connect" cta="Lend a Hand" />
 				<InvolveCard icon="bx bx-link-external" title="Partner With Us" description="Brands, schools, and organizations—let’s build a brighter future together." href="/connect" cta="Become a Partner" />
 			</div>
-			<div class="mt-8 text-center text-base-content/70">
-				<p>Contact: <a href="mailto:emaswatiskate@gmail.com" class="underline">emaswatiskate@gmail.com</a> | Instagram: <a href="https://instagram.com/Eswatini_Skateboarding" class="underline">@Eswatini_Skateboarding</a></p>
+		</div>
+	</section>
+	<!-- Impact Stories -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-12">Impact Stories</h2>
+			<p class="text-lg text-center mb-8">Read inspiring stories of youth empowerment, community change, and the joy of skateboarding.</p>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<TestimonialCard 
+					image="https://avatar.iran.liara.run/public/40"
+					name="Sipho Dlamini"
+					role="Youth Leader"
+					testimonial="Skateboarding taught me confidence and gave me a place to belong. Now I help teach younger kids and see them grow too."
+				/>
+				<TestimonialCard 
+					image="https://avatar.iran.liara.run/public/59"
+					name="Nomcebo Mamba"
+					role="Program Participant"
+					testimonial="The girls-only sessions helped me find my voice and make new friends. I feel strong and supported every time I skate."
+				/>
+				<TestimonialCard 
+					image="https://avatar.iran.liara.run/public/10"
+					name="Thabo Simelane"
+					role="Volunteer"
+					testimonial="I never thought I could skate, but the coaches believed in me. Now I help at community events and feel proud of what we do."
+				/>
 			</div>
 		</div>
 	</section>
+	
 </Layout>
 
 <style>

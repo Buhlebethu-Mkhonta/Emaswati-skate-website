@@ -5,10 +5,19 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 ---
 
 <Layout title="Updates - Emaswati Skate">
+   <!-- Hero -->
+  <section class="updates-hero relative min-h-[45vh] flex items-center justify-center text-center">
+		<div class="absolute inset-0 bg-black/60"></div>
+		<div class="relative z-[1] max-w-4xl px-6">
+			<h1 class="text-4xl md:text-4xl font-black uppercase tracking-tight text-white">Boards, Community, and Change: The Emaswati Skate Journal</h1>
+		</div>
+	</section>
   <section class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-3xl md:text-4xl font-bold mb-2 text-primary">Updates & Stories</h1>
-    <p class="mb-8 text-base-content/80">Catch up on the latest news, stories, and articles from Emaswati Skate.</p>
 
+   
+
+    <h1 class="text-3xl font-bold mb-4">Updates & Stories</h1>
+    <p class="mb-8 text-base-content/80">Catch up on the latest news, stories, and articles from Emaswati Skate.</p>
     <!-- Featured Story -->
     {allPosts.length > 0 && (
       <div class="mb-12">
@@ -49,3 +58,11 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
     </div>
   </section>
 </Layout>
+
+<style>
+  .updates-hero {
+    background-image: url('/images/swazi-park-6-a4d0dc84.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+</style>
