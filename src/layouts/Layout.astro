@@ -1,10 +1,12 @@
 ---
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 import "../Styles/global.css"
 import Footer from "../components/Footer.svelte"
 import Navabr from "../components/Navbar.svelte"
 import CookieConsent from "../components/CookieConsent.svelte"
 import SkateDivider from "../components/SkateDivider.svelte"
 import NewsLetterSignup from "../components/NewsletterSignup.svelte"
+
 const { title } = Astro.props;
 ---
 <!doctype html>
@@ -21,6 +23,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-base-200">
+		<SpeedInsights/>
 		<Navabr />
 		<main class="pt-16">
 			<slot />
