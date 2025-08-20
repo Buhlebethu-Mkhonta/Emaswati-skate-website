@@ -17,7 +17,9 @@ const formatDate = (date: string) => {
 };
 
 // Import all posts from updates/posts
-const posts = await Astro.glob('../pages/posts/*.md');
+const posts = await Promise.all(
+  Object.values(await import.meta.glob('../pages/posts/*.md')).map(post => post())
+);
 
 // Get related posts that share at least one tag with the current post
 const relatedPosts = posts
