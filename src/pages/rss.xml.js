@@ -1,17 +1,16 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const posts = await getCollection("blog");
+  const posts = await Astro.glob('../pages/posts/*.md');
   return rss({
     title: 'Emaswati Skate | Blog',
     description: 'Latest updates from Emaswati Skate',
     site: context.site,
     items: posts.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/posts/${post.slug}/`,
+      title: post.frontmatter.title,
+      pubDate: new Date(post.frontmatter.pubDate),
+      description: post.frontmatter.description,
+      link: post.url,
     })),
     customData: `<language>en-us</language>`,
   });
