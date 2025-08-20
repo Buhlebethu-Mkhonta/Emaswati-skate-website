@@ -10,5 +10,14 @@ export default defineConfig({
   vite:{
     plugins: [tailwindcss()],
   },
-  integrations: [svelte()]
+  integrations: [svelte()],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    },
+    // Enable WebP format by default
+    format: 'webp',
+    // Set default quality for lossy formats
+    quality: 80
+  }
 });

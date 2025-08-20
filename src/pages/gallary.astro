@@ -1,18 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from 'astro:assets';
+import ImageLightbox from '../components/ImageLightbox.svelte';
 
-import img1 from '../assets/Gallary/swazi-park-6-a4d0dc84.jpg';
-// Import more images as you add them, e.g.:
-// import img2 from '../assets/Gallary/another-image.jpg';
+// Dynamically import all images from the Gallery folder
+const images = await Astro.glob('../assets/Gallary/*.{png,jpg,jpeg,gif,webp}');
 
-const images = [
-	{ src: img1, alt: 'Skate Park 1' },
-    
-
-	// { src: img2, alt: 'Skate Park 2' },
-	// Add more images here
-];
+// Transform the imported images into our desired format
+const galleryImages = images.map((image, index) => ({
+    src: image.default,
+    alt: `Skate Gallery Image ${index + 1}`,
+    // You can extract the filename without extension to create a more meaningful alt text
+    title: image.default.src.split('/').pop().split('.')[0].replace(/-/g, ' ')
+}));
 ---
 
 <Layout title="Gallery - Emaswati Skate">
@@ -20,19 +20,72 @@ const images = [
 		<h1 class="text-3xl md:text-4xl font-black text-center mb-2">Skate the Moment</h1>
 		<p class="text-center text-base-content/80 mb-6">Unleash the thrill. Explore our photo gallery.</p>
 		
-		<div class="flex justify-center mb-10">
-			<div class="w-full max-w-3xl aspect-video rounded-xl overflow-hidden shadow-lg">
-				<Image src={img1} alt="Featured Skate" class="object-cover w-full h-full" />
-			</div>
-		</div>
-		<h2 class="text-2xl font-bold text-center mb-6">Featured Gallery</h2>
-				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
-					{images.map(({ src, alt }) => (
-						<div class="rounded-lg overflow-hidden border border-base-300 bg-base-100" style="break-inside: avoid;">
-							<Image src={src} alt={alt} class="object-cover w-full h-40" />
+		{galleryImages.length > 0 && (
+			<div class="flex justify-center mb-10">
+				<div 
+					class="w-full max-w-3xl aspect-video rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+					id="hero-image"
+				>
+					<div class="relative">
+						<Image 
+							src={galleryImages[0].src} 
+							alt={galleryImages[0].title || "Featured Skate"} 
+							class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" 
+							width={1024}
+							height={576}
+							loading="eager"
+							decoding="async"
+							format="webp"
+							quality={90}
+						/>
+						<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+							<span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 4v3m4-3h3m-3-4V7" />
+								</svg>
+							</span>
 						</div>
-					))}
+					</div>
 				</div>
+			</div>
+		)}
+		
+		<h2 class="text-2xl font-bold text-center mb-6">Featured Gallery</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
+			{galleryImages.slice(1).map((image, index) => {
+				const imageId = `gallery-image-${index}`;
+				return (
+					<div 
+						class="rounded-lg overflow-hidden border border-base-300 bg-base-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer" 
+						style="break-inside: avoid;"
+					>
+						<div 
+							class="relative group gallery-item"
+							data-image-url={image.src.src}
+							data-alt-text={image.title || image.alt}
+						>
+							<Image 
+								src={image.src} 
+								alt={image.title || image.alt} 
+								class="object-cover w-full h-40 group-hover:scale-105 transition-transform duration-300" 
+								width={400}
+								height={300}
+								loading="lazy"
+								decoding="async"
+							/>
+							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+								<span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 4v3m4-3h3m-3-4V7" />
+									</svg>
+								</span>
+							</div>
+						</div>
+					</div>
+				);
+			})}
+		</div>
+		
 		<!-- DaisyUI Pagination -->
 		<div class="flex justify-center">
 			<div class="join">
@@ -44,4 +97,48 @@ const images = [
 			</div>
 		</div>
 	</section>
+
+	<!-- Single Lightbox Component -->
+	<ImageLightbox client:load />
+
+	<script>
+		// Gallery lightbox functionality
+		document.addEventListener('DOMContentLoaded', () => {
+			// Add click handlers to all gallery items
+			const galleryItems = document.querySelectorAll('.gallery-item');
+			const heroImage = document.getElementById('hero-image');
+			
+			// Hero image click handler
+			if (heroImage) {
+				const heroImageData = heroImage.querySelector('img');
+				if (heroImageData) {
+					heroImage.addEventListener('click', () => {
+						const imageUrl = heroImageData.src;
+						const altText = heroImageData.alt;
+						openLightbox(imageUrl, altText);
+					});
+				}
+			}
+			
+			// Gallery items click handlers
+			galleryItems.forEach((item) => {
+				const htmlItem = item;
+				htmlItem.addEventListener('click', () => {
+					const imageUrl = htmlItem.getAttribute('data-image-url');
+					const altText = htmlItem.getAttribute('data-alt-text');
+					if (imageUrl && altText) {
+						openLightbox(imageUrl, altText);
+					}
+				});
+			});
+		});
+		
+		function openLightbox(imageUrl: string, altText: string) {
+			// Create a custom event to communicate with the Svelte component
+			const event = new CustomEvent('openLightbox', {
+				detail: { imageUrl, altText }
+			});
+			document.dispatchEvent(event);
+		}
+	</script>
 </Layout>

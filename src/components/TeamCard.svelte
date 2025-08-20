@@ -13,7 +13,12 @@
 <div class="card bg-base-100  shadow-sm border border-base-300">
 	<figure class="avater pt-10">
         <div class="w-50 mask mask-circle">
-            <img src={image} alt={`Team member ${name}`}/>
+            <img 
+                src={`${image}?w=300&h=300&fit=cover&format=webp&q=80`} 
+                alt={`Team member ${name}`}
+                loading="lazy"
+                decoding="async"
+            />
         </div>
 	</figure>
 	<div class="card-body items-center text-center">
