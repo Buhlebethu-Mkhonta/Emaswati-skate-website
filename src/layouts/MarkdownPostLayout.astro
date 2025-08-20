@@ -1,56 +1,110 @@
 ---
 const { frontmatter } = Astro.props;
 import Layout from "./Layout.astro";
+import BlogPostCard from "../components/BlogPostCard.svelte";
+
+// Log the image information for debugging
+console.log('Image URL:', frontmatter.image?.url);
+console.log('Full frontmatter:', frontmatter);
+
+// Function to format date
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
 
 // Import all posts from updates/posts
 const posts = await Astro.glob('../pages/posts/*.md');
+
+// Get related posts that share at least one tag with the current post
+const relatedPosts = posts
+  .filter(post => {
+    // Don't show the current post
+    if (post.frontmatter.title === frontmatter.title) return false;
+    
+    // Check if there are matching tags
+    const currentTags = frontmatter.tags || [];
+    const postTags = post.frontmatter.tags || [];
+    return currentTags.some(tag => postTags.includes(tag));
+  })
+  .slice(0, 3); // show only 3 related posts
 ---
 
 <Layout title={frontmatter.title}>
-  <section class="container mx-auto px-4 py-12">
+  <!-- Hero Section -->
+  <section class="about-hero relative min-h-[45vh] flex items-center justify-center text-center">
+    {frontmatter.image?.url && (
+      <div 
+        class="absolute inset-0 bg-center bg-cover bg-no-repeat"
+        style={`background-image: url('${frontmatter.image.url}')`}
+      ></div>
+    )}
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-[1] max-w-4xl px-6">
+      <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+        {frontmatter.title}
+      </h1>
+      <div class="mt-4 text-white/90 md:text-lg flex items-center justify-center gap-2">
+        <span>✍️ Written by <span class="font-medium">{frontmatter.author}</span></span>
+        {frontmatter.pubDate && (
+          <span>• {formatDate(frontmatter.pubDate)}</span>
+        )}
+      </div>
+      <div class="flex gap-3 mt-4 mb-10 justify-center">
+        {frontmatter.tags?.map((tag: string) => (
+          <span class="px-3 py-1 text-white text-sm bg-white/20 backdrop-blur-sm rounded-full">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-4 -mt-16 relative z-10">
     <article class="max-w-3xl mx-auto bg-white dark:bg-base-100 rounded-2xl shadow-lg p-8 leading-relaxed">
-      
-      <!-- Blog header -->
-      <header class="mb-8 text-center">
-        <h1 class="text-4xl font-extrabold tracking-tight mb-3 text-base-content">
-          {frontmatter.title}
-        </h1>
-        <p class="text-sm text-base-content/70">
-          ✍️ Written by <span class="font-medium">{frontmatter.author}</span> 
-          {frontmatter.pubDate ? ` • ${new Date(frontmatter.pubDate).toLocaleDateString()}` : ""}
-        </p>
-      </header>
 
       <!-- Blog content -->
-      <div class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+      <div class=" max-w-none ">
         <slot />
       </div>
       
       <!-- Back button -->
-      <div class="mt-12 text-center">
-        <a href="/updates" class="inline-block px-6 py-3 rounded-xl bg-primary/40 hover:bg-primary hover:text-white transition font-medium"
+      <div class="mt-12 flex justify-end">
+        <a 
+          href="/updates" 
+          class="inline-flex items-center px-6 py-3 rounded-xl hover:text-primary transition font-medium group"
         >
-          ⬅ Back to Updates
+          <span class="mr-2 transform group-hover:-translate-x-1 transition-transform">⬅</span>
+          Back to Updates
         </a>
       </div>
     </article>
-    <!-- Other blogs -->
+
+    <!-- Related Posts -->
       <section class="mt-16 border-t border-base-300 pt-8">
-        <h2 class="text-xl font-semibold mb-4 text-base-content">Read more stories</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          {
-            posts
-              .filter(p => p.frontmatter.title !== frontmatter.title) // exclude current post
-              .slice(0, 2) // show only 2 other posts
-              .map(post => (
-                <a href={post.url} class="block p-4 rounded-lg border border-base-300 hover:bg-base-200 transition">
-                  <h3 class="text-lg font-semibold mb-1">{post.frontmatter.title}</h3>
-                  <p class="text-sm text-base-content/70">
-                    {post.frontmatter.description || "Read more →"}
-                  </p>
-                </a>
-              ))
-          }
+        <h2 class="text-xl font-semibold mb-4 text-base-content">Explore similar posts</h2>
+        <div class="grid gap-6 md:grid-cols-4">
+          {relatedPosts.length > 0 ? (
+            relatedPosts.map(post => (
+              <BlogPostCard
+                client:load
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                image={post.frontmatter.image?.url || '/images/default-post.jpg'}
+                alt={post.frontmatter.image?.alt || post.frontmatter.title}
+                url={post.url || ''}
+                pubDate={post.frontmatter.pubDate}
+                tags={post.frontmatter.tags || []}
+              />
+            ))
+          ) : (
+            <p class="text-base-content/70 col-span-2 text-center py-8">
+              No related stories found.
+            </p>
+          )}
         </div>
       </section>
   </section>

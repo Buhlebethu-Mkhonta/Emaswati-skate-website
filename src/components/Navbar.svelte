@@ -13,7 +13,6 @@
                 <li><a href="/about/">About Us</a></li>
                 <li><a href="/gallary/">Gallery</a></li>
                 <li><a href="/updates/">Updates</a></li>
-                <li><a href="/events/">Events</a></li>
                 <li><a href="/contact/">Contact</a></li>
             </ul>
         </div>
@@ -25,8 +24,7 @@
             <li><a href="/about/" class="hover:text-primary hover:bg-base">About Us</a></li>
             <li><a href="/gallary/" class="hover:text-primary hover:bg-base">Gallery</a></li>
             <li><a href="/updates/" class="hover:text-primary hover:bg-base">Updates</a></li>
-            <li><a href="/events/" class="hover:text-primary hover:bg-base">Events</a></li>
-            <li><a href="/contact/" class="hover:text-primary hover:bg-base">Contact</a></li>
+            <li><a href="/contact/" class="hover:text-primary hover:bg-base hover:">Contact</a></li>
         </ul>
     </div>
     <div class="navbar-end">

@@ -7,6 +7,16 @@
   export let tags: string[] = [];
   export let featured: boolean = false;
   export let alt: string = title;
+
+  // Format the date
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
 </script>
 
 <div class={`bg-base-100 border border-base-200 rounded-lg shadow p-4 flex flex-col justify-between ${featured ? 'md:col-span-2 md:flex-row gap-6 items-center' : ''}`}>
@@ -33,6 +43,6 @@
       <div class="flex-1"></div>
       <a href={url} class="ml-auto mt-2 hover:underline ">Read Now</a>
     </div>
-    <span class="text-xs text-base-content/60">{pubDate}</span>
+    <span class="text-xs text-base-content/60">{formatDate(pubDate)}</span>
   </div>
 </div>
