@@ -22,8 +22,8 @@
 		<div class="mt-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 			<p class="text-xs md:text-sm">© 2024 Emaswati Skate. All rights reserved.</p>
 			<div class="flex items-center gap-4 text-xl">
-				<a href="https://www.instagram.com/eswatini_skateboarding/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-primary"><i class="bx bxl-instagram"></i></a>
-				<a href="https://www.youtube.com/channel/UCZxXqHk8lTqd5cw2PNmi2OA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="hover:text-primary"><i class="bx bxl-youtube"></i></a>
+				<a href="https://www.instagram.com/eswatini_skateboarding/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-primary"><i class="fa-brands fa-instagram text-xl"></i></a>
+				<a href="https://www.youtube.com/channel/UCZxXqHk8lTqd5cw2PNmi2OA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="hover:text-primary"><i class="fa-brands fa-youtube text-xl"></i></a>
 			</div>
 		</div>
 	</div>
