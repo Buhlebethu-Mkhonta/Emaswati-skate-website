@@ -1,13 +1,29 @@
 ---
 import ValueCard from "../components/ValueCard.svelte"
+import Partners from "../components/Patners.svelte"
 import TestimonialCard from "../components/TestimonialCard.svelte"
 import ProgramCard from "../components/ProgramCard.svelte"
 import InvolveCard from "../components/InvolveCard.svelte"
 import Layout from '../layouts/Layout.astro'
 
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Partner data
+const partners = [
+  {
+    name: "European union",
+    website: "https://european-union.europa.eu/index_en"
+  },
+  {
+    name: "Good Push",
+    website: "https://www.goodpush.org/"
+  },
+  {
+    name: "Emlembe Water",
+    website: "https://communityfirst.org"
+  },
+  {
+	name: "Jenny Internet",
+	website: "https://www.jenny.co.sz/"
+  }]
 ---
 
 
@@ -38,7 +54,7 @@ import Layout from '../layouts/Layout.astro'
 
 	<!-- What We Do -->
 	<section class="py-20 bg-white">
-		<div class="container mx-auto px-4">
+		<div class="container mx-auto px-4 sm:px-2">
 			<h2 class="text-3xl font-bold text-center mb-12">What We Do</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 				<ProgramCard icon="fa-solid fa-person-skating text-xl" title="Skate Lessons" description="Free lessons for all ages at Lafezeka Skate Park and in communities." />
@@ -95,6 +111,7 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 		</div>
 	</section>
+	
 	<!-- Impact Stories -->
 	<section class="py-20 bg-white">
 		<div class="container mx-auto px-4">
@@ -121,6 +138,20 @@ import Layout from '../layouts/Layout.astro'
 				/>
 			</div>
 		</div>
+	</section>
+
+<!-- Partner Section with Infinite Scroll -->
+	<section class="py-20 overflow-hidden">
+		<Partners
+    		client:load
+    		title="Our Partners"
+    		subtitle="Proudly supported by organizations that believe in empowering Eswatini youth through skateboarding"
+    		{partners}
+    		speed1={30}
+    		speed2={35}
+    		showTwoRows={false}
+    		backgroundColor="bg-base/60"
+  	/>
 	</section>
 	
 </Layout>
@@ -150,4 +181,5 @@ import Layout from '../layouts/Layout.astro'
 		text-shadow: 0 3px 8px rgba(0,0,0,0.35);
 		letter-spacing: -0.02em;
 	}
+
 </style>

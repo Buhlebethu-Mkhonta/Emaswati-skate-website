@@ -14,6 +14,7 @@
                 <li><a href="/gallary/">Gallery</a></li>
                 <li><a href="/updates/">Updates</a></li>
                 <li><a href="/contact/">Contact</a></li>
+                <li><a href="/contact/">Donate</a></li>
             </ul>
         </div>
         <a class="btn btn-ghost text-xl" href="/">Emaswati Skateboarding</a>
@@ -27,7 +28,8 @@
             <li><a href="/contact/" class="hover:text-primary hover:bg-base hover:">Contact</a></li>
         </ul>
     </div>
-    <div class="navbar-end">
+    <div class="navbar-end pr-4 hidden lg:flex">
+        <button class="btn btn-primary text-white">Donate</button>
         
     </div>
 </div>
