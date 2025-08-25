@@ -4,7 +4,7 @@
   export let description = "Program description";
 </script>
 
-<div class="card relative w-full max-w-xs h-64 bg-primary overflow-hidden border border-base-300 transition-all duration-300 justify-self-center hover:bx-shadow-lg shadow-lg">
+<div class="card relative w-full max-w-xs h-40 bg-primary overflow-hidden border border-base-300 transition-all duration-300 justify-self-center hover:bx-shadow-lg shadow-lg">
   <!-- Icon and Title (Fixed) -->
   <div class="flex flex-col items-center justify-center h-full text-white z-20">
     <i class="{icon} text-4xl mb-4"></i>

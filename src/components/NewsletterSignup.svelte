@@ -12,8 +12,8 @@
 
 <div class="newsletter-section bg-primary text-primary-content py-10 px-4 md:px-0 flex flex-col items-center">
   <div class="w-full max-w-2xl mx-auto flex flex-col items-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2 text-center">Sign Up for Our Newsletter</h2>
-    <p class="mb-6 text-center text-base-content/80">Stay up to date with the latest news, events, and opportunities from Emaswati Skate!</p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2 text-center text-white">Sign Up for Our Newsletter</h2>
+    <p class="mb-6 text-center text-base-content/80 text-white">Stay up to date with the latest news, events, and opportunities from Emaswati Skate!</p>
     {#if !submitted}
       <form class="flex flex-col md:flex-row gap-3 w-full justify-center" on:submit|preventDefault={handleSubmit}>
         <input
