@@ -51,11 +51,65 @@ const partners = [
 		</div>
 	</section>
 
+	<!-- Truck Donation Banner -->
+	<section class="py-16 bg-base-100 border-t border-b border-base-300">
+		<div class="container mx-auto px-4">
+			<div class="max-w-6xl mx-auto">
+				<div class="flex flex-col lg:flex-row items-center gap-8">
+					<!-- Content -->
+					<div class="flex-1 text-center lg:text-left">
+						<div class="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-2 mb-4">
+							<i class="fa-solid fa-truck text-2xl"></i>
+							<span class="font-semibold">URGENT NEED</span>
+						</div>
+						<h2 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+							Help Us Get Our Mobile Skatepark Truck!
+						</h2>
+						<p class="text-lg md:text-xl text-base-content/80 mb-6 max-w-2xl">
+							We need a reliable truck to transport our mobile skatepark, equipment, and gear to underserved communities across Eswatini. Your donation will help us reach more youth and expand our impact.
+						</p>
+						<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+							<a href="/donate/" class="btn btn-primary btn-lg rounded-full shadow-lg hover:scale-105 transition-transform text-white">
+								<i class="fa-solid fa-heart mr-2"></i>
+								Donate Now
+							</a>
+						</div>
+					</div>
+					
+					<!-- Visual Element -->
+					<div class="flex-1 max-w-md">
+						<div class="relative">
+							<div class="bg-base-200 border border-base-300 rounded-2xl p-8 text-center">
+								<i class="fa-solid fa-truck text-6xl text-primary mb-4"></i>
+								<div class="space-y-2 text-sm">
+									<div class="flex justify-between">
+										<span class="text-base-content/70">Goal:</span>
+										<span class="font-bold text-base-content">SZL 15,000</span>
+									</div>
+									<div class="flex justify-between">
+										<span class="text-base-content/70">Raised:</span>
+										<span class="font-bold text-primary">SZL 0</span>
+									</div>
+									<div class="w-full bg-base-300 rounded-full h-2 mt-4">
+										<div class="bg-primary h-2 rounded-full" style="width: 0%"></div>
+									</div>
+									<p class="text-xs text-base-content/60 mt-2">0% of goal reached</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- What We Do -->
 	<section class="py-20 bg-white">
 		<div class="container mx-auto px-4 sm:px-2">
-			<h2 class="text-3xl font-bold text-center mb-12">What We Do</h2>
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold">What We Do</h2>
+				<p class="text-lg text-base-content/70 mt-2">Rolling forward with purpose and passion</p>
+			</div>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<ProgramCard icon="fa-solid fa-person-skating" title="Skate Lessons" description="Free lessons for all ages at Lafezeka Skate Park and in communities." />
 				<ProgramCard icon="fa-solid fa-venus" title="Girls Skate & Empowerment" description="Girls-only sessions, lessons, and empowerment circles." />
@@ -76,7 +130,10 @@ const partners = [
 	<!-- Impact Section -->
 	<section class="py-20 bg-base-200">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-bold text-center mb-12">Our Impact</h2>
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold">Our Impact</h2>
+				<p class="text-lg text-base-content/70 mt-2">Making waves, one trick at a time</p>
+			</div>
 			<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
 				<div>
 					<h3 class="text-4xl font-bold text-primary">500+</h3>
@@ -106,11 +163,14 @@ const partners = [
 	<!-- Get Involved -->
 	<section class="py-20 bg-base-20">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-bold text-center mb-12">Get Involved</h2>
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold">Get Involved</h2>
+				<p class="text-lg text-base-content/70 mt-2">Join the movement and make a difference</p>
+			</div>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				<InvolveCard icon="fa-solid fa-heart" title="Make a Donation" description="Your contribution funds lessons, safety gear, and safe spaces to skate." href="/support" cta="Donate" />
-				<InvolveCard icon="fa-solid fa-hand-holding-heart" title="Volunteer" description="Help at sessions, support events, or join our outreach team." href="/connect" cta="Lend a Hand" />
-				<InvolveCard icon="fa-solid fa-handshake" title="Partner With Us" description="Brands, schools, and organizations—let’s build a brighter future together." href="/connect" cta="Become a Partner" />
+				<InvolveCard icon="fa-solid fa-heart" title="Make a Donation" description="Your contribution funds lessons, safety gear, and safe spaces to skate." href="/donate/" cta="Donate" />
+				<InvolveCard icon="fa-solid fa-hand-holding-heart" title="Volunteer" description="Help at sessions, support events, or join our outreach team." href="/contact" cta="Lend a Hand" />
+				<InvolveCard icon="fa-solid fa-handshake" title="Partner With Us" description="Brands, schools, and organizations—let’s build a brighter future together." href="/contact" cta="Become a Partner" />
 			</div>
 		</div>
 	</section>
@@ -118,8 +178,10 @@ const partners = [
 	<!-- Impact Stories -->
 	<section class="py-20 bg-white">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-bold text-center mb-12">Impact Stories</h2>
-			<p class="text-lg text-center mb-8">Read inspiring stories of youth empowerment, community change, and the joy of skateboarding.</p>
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold">Impact Stories</h2>
+				<p class="text-lg text-base-content/70 mt-2">Read inspiring stories of youth empowerment, community change, and the joy of skateboarding.</p>
+			</div>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 				<TestimonialCard 
 					image="https://avatar.iran.liara.run/public/40"
@@ -144,7 +206,7 @@ const partners = [
 	</section>
 
 <!-- Partner Section with Infinite Scroll -->
-	<section class="py-20 overflow-hidden">
+	<section class="overflow-hidden">
 		<Partners
     		client:load
     		title="Our Partners"
@@ -184,5 +246,6 @@ const partners = [
 		text-shadow: 0 3px 8px rgba(0,0,0,0.35);
 		letter-spacing: -0.02em;
 	}
+
 
 </style>

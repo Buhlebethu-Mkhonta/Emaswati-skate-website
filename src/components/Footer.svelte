@@ -12,8 +12,8 @@
 			<!-- Right: Top navigation links -->
 			<ul class="flex items-center gap-6 text-sm md:text-base">
 				<li><a href="/" class="link link-hover">Home</a></li>
-				<li><a href="/support" class="link link-hover">Support</a></li>
-				<li><a href="/connect" class="link link-hover">Connect</a></li>
+				<li><a href="/donate" class="link link-hover">Donate</a></li>
+				<li><a href="/contact" class="link link-hover">Contact Us</a></li>
 			</ul>
 		</div>
 
